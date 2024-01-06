@@ -1,0 +1,907 @@
+INFO  [2024-01-02 13:16:09,357] org.eclipse.jetty.util.log: Logging initialized @1156ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2024-01-02 13:16:09,424] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-01-02 13:16:09,425] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-01-02 13:16:09,425] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: assets for path /*
+INFO  [2024-01-02 13:16:09,499] org.hibernate.Version: HHH000412: Hibernate ORM core version [WORKING]
+INFO  [2024-01-02 13:16:09,636] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.aman.dropWizard.core.Task]
+INFO  [2024-01-02 13:16:09,657] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+ERROR [2024-01-02 13:16:30,988] org.apache.tomcat.jdbc.pool.ConnectionPool: Unable to create initial connections of pool.
+! java.net.ConnectException: Connection timed out: connect
+! at java.base/sun.nio.ch.Net.connect0(Native Method)
+! at java.base/sun.nio.ch.Net.connect(Net.java:579)
+! at java.base/sun.nio.ch.Net.connect(Net.java:568)
+! at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+! at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+! at java.base/java.net.Socket.connect(Socket.java:633)
+! at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+! ... 43 common frames omitted
+! Causing: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+! at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+! at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+! at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+! at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:949)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+! ... 40 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:347)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:228)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:769)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:697)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:496)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:121)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:110)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:134)
+! at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+! at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+! at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+! at io.dropwizard.hibernate.SessionFactoryFactory.buildSessionFactory(SessionFactoryFactory.java:102)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:51)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:41)
+! at io.dropwizard.hibernate.HibernateBundle.run(HibernateBundle.java:74)
+! at io.dropwizard.setup.Bootstrap.run(Bootstrap.java:199)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:58)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:98)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:94)
+! at com.aman.dropWizard.myAppApplication.main(myAppApplication.java:23)
+WARN  [2024-01-02 13:16:30,989] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: HHH000342: Could not obtain connection to query metadata
+! java.net.ConnectException: Connection timed out: connect
+! at java.base/sun.nio.ch.Net.connect0(Native Method)
+! at java.base/sun.nio.ch.Net.connect(Net.java:579)
+! at java.base/sun.nio.ch.Net.connect(Net.java:568)
+! at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+! at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+! at java.base/java.net.Socket.connect(Socket.java:633)
+! at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+! ... 43 common frames omitted
+! Causing: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+! at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+! at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+! at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+! at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:949)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+! ... 40 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:347)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:228)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:769)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:697)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:496)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:121)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:110)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:134)
+! at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+! at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+! at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+! at io.dropwizard.hibernate.SessionFactoryFactory.buildSessionFactory(SessionFactoryFactory.java:102)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:51)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:41)
+! at io.dropwizard.hibernate.HibernateBundle.run(HibernateBundle.java:74)
+! at io.dropwizard.setup.Bootstrap.run(Bootstrap.java:199)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:58)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:98)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:94)
+! at com.aman.dropWizard.myAppApplication.main(myAppApplication.java:23)
+INFO  [2024-01-02 13:21:51,787] org.eclipse.jetty.util.log: Logging initialized @896ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2024-01-02 13:21:51,843] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-01-02 13:21:51,844] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-01-02 13:21:51,844] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: assets for path /*
+INFO  [2024-01-02 13:21:51,906] org.hibernate.Version: HHH000412: Hibernate ORM core version [WORKING]
+INFO  [2024-01-02 13:21:52,005] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.aman.dropWizard.core.Task]
+INFO  [2024-01-02 13:21:52,020] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+ERROR [2024-01-02 13:22:13,318] org.apache.tomcat.jdbc.pool.ConnectionPool: Unable to create initial connections of pool.
+! java.net.ConnectException: Connection timed out: connect
+! at java.base/sun.nio.ch.Net.connect0(Native Method)
+! at java.base/sun.nio.ch.Net.connect(Net.java:579)
+! at java.base/sun.nio.ch.Net.connect(Net.java:568)
+! at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+! at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+! at java.base/java.net.Socket.connect(Socket.java:633)
+! at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+! ... 43 common frames omitted
+! Causing: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+! at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+! at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+! at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+! at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:949)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+! ... 40 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:347)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:228)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:769)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:697)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:496)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:121)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:110)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:134)
+! at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+! at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+! at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+! at io.dropwizard.hibernate.SessionFactoryFactory.buildSessionFactory(SessionFactoryFactory.java:102)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:51)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:41)
+! at io.dropwizard.hibernate.HibernateBundle.run(HibernateBundle.java:74)
+! at io.dropwizard.setup.Bootstrap.run(Bootstrap.java:199)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:58)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:98)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:94)
+! at com.aman.dropWizard.myAppApplication.main(myAppApplication.java:23)
+WARN  [2024-01-02 13:22:13,319] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: HHH000342: Could not obtain connection to query metadata
+! java.net.ConnectException: Connection timed out: connect
+! at java.base/sun.nio.ch.Net.connect0(Native Method)
+! at java.base/sun.nio.ch.Net.connect(Net.java:579)
+! at java.base/sun.nio.ch.Net.connect(Net.java:568)
+! at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+! at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+! at java.base/java.net.Socket.connect(Socket.java:633)
+! at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+! ... 43 common frames omitted
+! Causing: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+! at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+! at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+! at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+! at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+! at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+! at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+! at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+! at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+! at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:949)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:819)
+! ... 40 common frames omitted
+! Causing: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+! 
+! The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+! at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+! at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+! at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+! at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+! at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:347)
+! at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:228)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:769)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:697)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:496)
+! at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:121)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:110)
+! at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:134)
+! at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+! at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+! at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+! at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+! at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+! at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+! at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+! at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+! at io.dropwizard.hibernate.SessionFactoryFactory.buildSessionFactory(SessionFactoryFactory.java:102)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:51)
+! at io.dropwizard.hibernate.SessionFactoryFactory.build(SessionFactoryFactory.java:41)
+! at io.dropwizard.hibernate.HibernateBundle.run(HibernateBundle.java:74)
+! at io.dropwizard.setup.Bootstrap.run(Bootstrap.java:199)
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:58)
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:98)
+! at io.dropwizard.cli.Cli.run(Cli.java:78)
+! at io.dropwizard.Application.run(Application.java:94)
+! at com.aman.dropWizard.myAppApplication.main(myAppApplication.java:23)
+INFO  [2024-01-02 13:28:33,325] org.eclipse.jetty.util.log: Logging initialized @878ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2024-01-02 13:28:33,378] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-01-02 13:28:33,379] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-01-02 13:28:33,379] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: assets for path /*
+INFO  [2024-01-02 13:28:33,440] org.hibernate.Version: HHH000412: Hibernate ORM core version [WORKING]
+INFO  [2024-01-02 13:28:33,537] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.aman.dropWizard.core.Task]
+INFO  [2024-01-02 13:28:33,552] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2024-01-02 13:28:34,233] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO  [2024-01-02 13:28:34,707] io.dropwizard.server.ServerFactory: Starting myApp
+================================================================================
+
+                              myApp
+
+================================================================================
+
+INFO  [2024-01-02 13:28:34,770] org.eclipse.jetty.setuid.SetUIDListener: Opened application@5c0e2ec{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-02 13:28:34,770] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@4fa8bebb{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-02 13:28:34,772] org.eclipse.jetty.server.Server: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 17.0.5+8
+INFO  [2024-01-02 13:28:35,133] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    POST    /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    DELETE  /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    GET     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    PUT     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+
+INFO  [2024-01-02 13:28:35,138] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2a4cb8ae{/,null,AVAILABLE}
+INFO  [2024-01-02 13:28:35,141] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-01-02 13:28:35,141] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@7f894a6f{/,null,AVAILABLE}
+INFO  [2024-01-02 13:28:35,161] org.eclipse.jetty.server.AbstractConnector: Started application@5c0e2ec{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-02 13:28:35,169] org.eclipse.jetty.server.AbstractConnector: Started admin@4fa8bebb{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-02 13:28:35,169] org.eclipse.jetty.server.Server: Started @2723ms
+INFO  [2024-01-02 13:29:09,814] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    90400 nanoseconds spent acquiring 1 JDBC connections;
+    45500 nanoseconds spent releasing 1 JDBC connections;
+    19793500 nanoseconds spent preparing 1 JDBC statements;
+    3318600 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    16865700 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+    39000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+WARN  [2024-01-02 13:29:41,433] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: SQL Error: 1406, SQLState: 22001
+ERROR [2024-01-02 13:29:41,434] org.hibernate.engine.jdbc.spi.SqlExceptionHelper: Data truncation: Data too long for column 'description' at row 1
+INFO  [2024-01-02 13:29:41,440] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    35600 nanoseconds spent acquiring 1 JDBC connections;
+    25100 nanoseconds spent releasing 1 JDBC connections;
+    1216600 nanoseconds spent preparing 2 JDBC statements;
+    12535900 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    28495200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ERROR [2024-01-02 13:29:41,445] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: 36ca7bd09e489c22
+! com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'description' at row 1
+! at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+! at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+! at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)
+! at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)
+! at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)
+! at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)
+! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+! at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+! at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+! at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:118)
+! at jdk.proxy2/jdk.proxy2.$Proxy89.executeUpdate(Unknown Source)
+! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+! ... 87 common frames omitted
+! Causing: org.hibernate.exception.DataException: could not execute statement
+! at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52)
+! at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+! at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+! at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3379)
+! at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3906)
+! at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+! at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+! at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+! at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+! at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+! at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+! at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+! at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+! at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1391)
+! ... 76 common frames omitted
+! Causing: javax.persistence.PersistenceException: org.hibernate.exception.DataException: could not execute statement
+! at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+! at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+! at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+! at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1395)
+! at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:482)
+! at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3274)
+! at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2409)
+! at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:448)
+! at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+! at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+! at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+! at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+! at io.dropwizard.hibernate.UnitOfWorkAspect.commitTransaction(UnitOfWorkAspect.java:215)
+! at io.dropwizard.hibernate.UnitOfWorkAspect.afterEnd(UnitOfWorkAspect.java:108)
+! at io.dropwizard.hibernate.UnitOfWorkApplicationListener$UnitOfWorkEventListener.onEvent(UnitOfWorkApplicationListener.java:80)
+! at org.glassfish.jersey.server.internal.monitoring.CompositeRequestEventListener.onEvent(CompositeRequestEventListener.java:47)
+! at org.glassfish.jersey.server.internal.process.RequestProcessingContext.triggerEvent(RequestProcessingContext.java:203)
+! at org.glassfish.jersey.server.ContainerFilteringStage$ResponseFilterStage.apply(ContainerFilteringStage.java:164)
+! at org.glassfish.jersey.server.ContainerFilteringStage$ResponseFilterStage.apply(ContainerFilteringStage.java:139)
+! at org.glassfish.jersey.process.internal.Stages.process(Stages.java:147)
+! at org.glassfish.jersey.server.ServerRuntime$Responder.processResponse(ServerRuntime.java:371)
+! at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:363)
+! at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:258)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:234)
+! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+! at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1626)
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+! at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+! at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:47)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:41)
+! at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+! at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+! at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:319)
+! at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:273)
+! at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+! at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:548)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1434)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:313)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:713)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:54)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+! at org.eclipse.jetty.server.Server.handle(Server.java:516)
+! at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+! at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+! at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+! at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+! at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:386)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+! at java.base/java.lang.Thread.run(Thread.java:833)
+INFO  [2024-01-02 13:30:16,670] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    38900 nanoseconds spent acquiring 1 JDBC connections;
+    69000 nanoseconds spent releasing 1 JDBC connections;
+    470100 nanoseconds spent preparing 2 JDBC statements;
+    4207900 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    4187100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 13:30:16,692] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    44800 nanoseconds spent acquiring 1 JDBC connections;
+    38300 nanoseconds spent releasing 1 JDBC connections;
+    135100 nanoseconds spent preparing 1 JDBC statements;
+    1786500 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    513700 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 0 collections);
+    4100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 13:30:57,988] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    115300 nanoseconds spent acquiring 1 JDBC connections;
+    37900 nanoseconds spent releasing 1 JDBC connections;
+    580900 nanoseconds spent preparing 2 JDBC statements;
+    5819500 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    5059200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 13:30:58,005] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    45800 nanoseconds spent acquiring 1 JDBC connections;
+    35100 nanoseconds spent releasing 1 JDBC connections;
+    179800 nanoseconds spent preparing 1 JDBC statements;
+    2555500 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    154900 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    5500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 15:07:40,662] org.eclipse.jetty.server.AbstractConnector: Stopped application@5c0e2ec{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-02 15:07:40,665] org.eclipse.jetty.server.AbstractConnector: Stopped admin@4fa8bebb{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-02 15:07:40,669] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@7f894a6f{/,null,STOPPED}
+INFO  [2024-01-02 15:07:40,694] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2a4cb8ae{/,null,STOPPED}
+INFO  [2024-01-02 22:08:58,767] org.eclipse.jetty.util.log: Logging initialized @1352ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2024-01-02 22:08:58,832] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-01-02 22:08:58,833] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-01-02 22:08:58,833] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: assets for path /*
+INFO  [2024-01-02 22:08:58,919] org.hibernate.Version: HHH000412: Hibernate ORM core version [WORKING]
+INFO  [2024-01-02 22:08:59,063] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.aman.dropWizard.core.Task]
+INFO  [2024-01-02 22:08:59,082] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2024-01-02 22:08:59,953] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO  [2024-01-02 22:09:00,598] io.dropwizard.server.ServerFactory: Starting myApp
+================================================================================
+
+                              myApp
+
+================================================================================
+
+INFO  [2024-01-02 22:09:00,691] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-02 22:09:00,691] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-02 22:09:00,693] org.eclipse.jetty.server.Server: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 17.0.5+8
+INFO  [2024-01-02 22:09:01,160] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    POST    /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    DELETE  /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    GET     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    PUT     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+
+INFO  [2024-01-02 22:09:01,162] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6eab92f3{/,null,AVAILABLE}
+INFO  [2024-01-02 22:09:01,168] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-01-02 22:09:01,169] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@65b5b5ed{/,null,AVAILABLE}
+INFO  [2024-01-02 22:09:01,195] org.eclipse.jetty.server.AbstractConnector: Started application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-02 22:09:01,203] org.eclipse.jetty.server.AbstractConnector: Started admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-02 22:09:01,203] org.eclipse.jetty.server.Server: Started @3789ms
+INFO  [2024-01-02 22:10:58,115] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    206600 nanoseconds spent acquiring 1 JDBC connections;
+    117100 nanoseconds spent releasing 1 JDBC connections;
+    43463000 nanoseconds spent preparing 1 JDBC statements;
+    34029200 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    19606700 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    58700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:01,310] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    180100 nanoseconds spent acquiring 1 JDBC connections;
+    124900 nanoseconds spent releasing 1 JDBC connections;
+    1000800 nanoseconds spent preparing 1 JDBC statements;
+    4077000 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    551400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    12300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:02,116] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    111800 nanoseconds spent acquiring 1 JDBC connections;
+    42800 nanoseconds spent releasing 1 JDBC connections;
+    1121300 nanoseconds spent preparing 1 JDBC statements;
+    5937700 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    645300 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    36000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:02,415] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    102700 nanoseconds spent acquiring 1 JDBC connections;
+    55800 nanoseconds spent releasing 1 JDBC connections;
+    1344100 nanoseconds spent preparing 1 JDBC statements;
+    4452100 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    361700 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    14100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:02,590] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    98000 nanoseconds spent acquiring 1 JDBC connections;
+    57700 nanoseconds spent releasing 1 JDBC connections;
+    616800 nanoseconds spent preparing 1 JDBC statements;
+    4846100 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    424400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    13300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:02,828] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    81700 nanoseconds spent acquiring 1 JDBC connections;
+    65600 nanoseconds spent releasing 1 JDBC connections;
+    540000 nanoseconds spent preparing 1 JDBC statements;
+    5063100 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    483200 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    12500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:03,103] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    115800 nanoseconds spent acquiring 1 JDBC connections;
+    106700 nanoseconds spent releasing 1 JDBC connections;
+    419300 nanoseconds spent preparing 1 JDBC statements;
+    3167300 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    333400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    11200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:06,846] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    102300 nanoseconds spent acquiring 1 JDBC connections;
+    61600 nanoseconds spent releasing 1 JDBC connections;
+    626300 nanoseconds spent preparing 1 JDBC statements;
+    7174400 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    209700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    10300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:08,991] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    78200 nanoseconds spent acquiring 1 JDBC connections;
+    60800 nanoseconds spent releasing 1 JDBC connections;
+    703200 nanoseconds spent preparing 1 JDBC statements;
+    3756500 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    602900 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    16000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:09,478] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    1090400 nanoseconds spent acquiring 1 JDBC connections;
+    50700 nanoseconds spent releasing 1 JDBC connections;
+    658600 nanoseconds spent preparing 1 JDBC statements;
+    5113700 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    397100 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    12400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:09,704] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    166300 nanoseconds spent acquiring 1 JDBC connections;
+    56600 nanoseconds spent releasing 1 JDBC connections;
+    681000 nanoseconds spent preparing 1 JDBC statements;
+    4945800 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    370400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    11200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:11,295] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    81200 nanoseconds spent acquiring 1 JDBC connections;
+    73400 nanoseconds spent releasing 1 JDBC connections;
+    522500 nanoseconds spent preparing 1 JDBC statements;
+    5750700 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    418600 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    15600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:11,566] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    87400 nanoseconds spent acquiring 1 JDBC connections;
+    134700 nanoseconds spent releasing 1 JDBC connections;
+    540500 nanoseconds spent preparing 1 JDBC statements;
+    5034900 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    518600 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    14500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:11:11,760] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    86000 nanoseconds spent acquiring 1 JDBC connections;
+    109500 nanoseconds spent releasing 1 JDBC connections;
+    402300 nanoseconds spent preparing 1 JDBC statements;
+    2443300 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    399600 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    8600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:12:19,235] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    114200 nanoseconds spent acquiring 1 JDBC connections;
+    96500 nanoseconds spent releasing 1 JDBC connections;
+    410400 nanoseconds spent preparing 1 JDBC statements;
+    2723700 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    240300 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    8900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-02 22:12:44,036] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    70100 nanoseconds spent acquiring 1 JDBC connections;
+    94800 nanoseconds spent releasing 1 JDBC connections;
+    2411500 nanoseconds spent preparing 1 JDBC statements;
+    7032200 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    396400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    12300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 00:22:20,513] org.eclipse.jetty.server.AbstractConnector: Stopped application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-03 00:22:20,521] org.eclipse.jetty.server.AbstractConnector: Stopped admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-03 00:22:20,529] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@65b5b5ed{/,null,STOPPED}
+INFO  [2024-01-03 00:22:20,580] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6eab92f3{/,null,STOPPED}
+INFO  [2024-01-03 12:56:10,856] org.eclipse.jetty.util.log: Logging initialized @952ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2024-01-03 12:56:10,904] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-01-03 12:56:10,905] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-01-03 12:56:10,905] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: assets for path /*
+INFO  [2024-01-03 12:56:10,966] org.hibernate.Version: HHH000412: Hibernate ORM core version [WORKING]
+INFO  [2024-01-03 12:56:11,068] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.aman.dropWizard.core.Task]
+INFO  [2024-01-03 12:56:11,083] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2024-01-03 12:56:11,733] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+INFO  [2024-01-03 12:56:12,219] io.dropwizard.server.ServerFactory: Starting myApp
+================================================================================
+
+                              myApp
+
+================================================================================
+
+INFO  [2024-01-03 12:56:12,278] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-03 12:56:12,278] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-03 12:56:12,279] org.eclipse.jetty.server.Server: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 17.0.5+8
+INFO  [2024-01-03 12:56:12,606] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    POST    /api/tasks (com.aman.dropWizard.resources.TaskResource)
+    DELETE  /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    GET     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+    PUT     /api/tasks/{id} (com.aman.dropWizard.resources.TaskResource)
+
+INFO  [2024-01-03 12:56:12,608] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6eab92f3{/,null,AVAILABLE}
+INFO  [2024-01-03 12:56:12,610] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-01-03 12:56:12,611] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@65b5b5ed{/,null,AVAILABLE}
+INFO  [2024-01-03 12:56:12,627] org.eclipse.jetty.server.AbstractConnector: Started application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-03 12:56:12,631] org.eclipse.jetty.server.AbstractConnector: Started admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-03 12:56:12,631] org.eclipse.jetty.server.Server: Started @2729ms
+INFO  [2024-01-03 12:57:41,850] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    122100 nanoseconds spent acquiring 1 JDBC connections;
+    43800 nanoseconds spent releasing 1 JDBC connections;
+    14883700 nanoseconds spent preparing 1 JDBC statements;
+    23299800 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    7171999 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    20100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:57:43,455] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    85700 nanoseconds spent acquiring 1 JDBC connections;
+    39600 nanoseconds spent releasing 1 JDBC connections;
+    249401 nanoseconds spent preparing 1 JDBC statements;
+    2111001 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    225500 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    18000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:57:56,869] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    36001 nanoseconds spent acquiring 1 JDBC connections;
+    24100 nanoseconds spent releasing 1 JDBC connections;
+    283000 nanoseconds spent preparing 1 JDBC statements;
+    1400101 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    169900 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    6700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:57:58,353] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    61600 nanoseconds spent acquiring 1 JDBC connections;
+    32999 nanoseconds spent releasing 1 JDBC connections;
+    173200 nanoseconds spent preparing 1 JDBC statements;
+    2253300 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    199500 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    3701 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:57:58,898] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    48400 nanoseconds spent acquiring 1 JDBC connections;
+    23100 nanoseconds spent releasing 1 JDBC connections;
+    302601 nanoseconds spent preparing 1 JDBC statements;
+    3050000 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    304901 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    7300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:57:59,242] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    39300 nanoseconds spent acquiring 1 JDBC connections;
+    35001 nanoseconds spent releasing 1 JDBC connections;
+    191700 nanoseconds spent preparing 1 JDBC statements;
+    2583900 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    219201 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    5901 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:58:00,014] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    79201 nanoseconds spent acquiring 1 JDBC connections;
+    52001 nanoseconds spent releasing 1 JDBC connections;
+    268700 nanoseconds spent preparing 1 JDBC statements;
+    1495800 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    147399 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    8901 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 12:58:13,023] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    61100 nanoseconds spent acquiring 1 JDBC connections;
+    66199 nanoseconds spent releasing 1 JDBC connections;
+    170200 nanoseconds spent preparing 1 JDBC statements;
+    1787400 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    185699 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 0 collections);
+    3899 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2024-01-03 14:40:06,313] org.eclipse.jetty.server.AbstractConnector: Stopped application@6253e59a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-01-03 14:40:06,323] org.eclipse.jetty.server.AbstractConnector: Stopped admin@7d1cb59f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-01-03 14:40:06,328] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@65b5b5ed{/,null,STOPPED}
+INFO  [2024-01-03 14:40:06,364] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6eab92f3{/,null,STOPPED}

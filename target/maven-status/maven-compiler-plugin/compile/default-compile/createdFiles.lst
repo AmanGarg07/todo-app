@@ -1,0 +1,10 @@
+com\aman\dropWizard\client\AppBasicAuthenticator.class
+com\aman\dropWizard\myAppConfiguration.class
+com\aman\dropWizard\client\User.class
+com\aman\dropWizard\myAppApplication$1.class
+com\aman\dropWizard\db\TaskDAO.class
+com\aman\dropWizard\myAppApplication.class
+com\aman\dropWizard\core\TaskValidator.class
+com\aman\dropWizard\core\Task.class
+com\aman\dropWizard\client\AppAuthorizer.class
+com\aman\dropWizard\resources\TaskResource.class

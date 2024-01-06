@@ -1,0 +1,29 @@
+logging:
+  level: INFO
+  loggers:
+    dropWizard: DEBUG
+  appenders:
+    - type: console
+    - type: file
+      # The file to which current statements will be logged.
+      currentLogFilename: ./logs/example.log
+      threshold: INFO
+      archive: false
+      timeZone: Asia/Kolkata
+
+server:
+  requestLog:
+    appenders:
+      - type: console
+      - type: file
+        currentLogFilename: ./logs/access.log
+        archive: false
+        timeZone: Asia/Kolkata
+
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root
+  password: root
+#  url: jdbc:mysql://172.17.0.2/tasks
+  url : jdbc:mysql://localhost:3307/tasks
+
